@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button, StyleSheet, View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-export default function App() {
+export default function Login() {
   const [facing, setFacing] = useState('back');
   const [permission, requestPermission] = useCameraPermissions();
   const [email, setEmail] = useState('');
@@ -36,6 +36,10 @@ export default function App() {
     setShowCamera(true);
   }
 
+  function closeCamera() {
+    setShowCamera(false);
+  }
+
   return (
     <View style={styles.container}>
       {!showCamera && (
@@ -64,6 +68,7 @@ export default function App() {
             </View>
 
             <View style={styles.PadreBoton}>
+              {/* Login clásico */}
               <TouchableOpacity
                 style={styles.cajaBoton}
                 activeOpacity={0.8}
@@ -72,12 +77,31 @@ export default function App() {
                 <Text style={styles.TextoBoton}>Iniciar Sesión</Text>
               </TouchableOpacity>
 
+              {/* Abrir cámara */}
               <TouchableOpacity
-                style={[styles.cajaBoton, { marginTop: 10, backgroundColor: '#28a745' }]}
+                style={[styles.cajaBoton, { marginTop: 10, backgroundColor: '#1976d2' }]}
                 activeOpacity={0.8}
                 onPress={openCamera}
               >
                 <Text style={styles.TextoBoton}>Abrir Cámara</Text>
+              </TouchableOpacity>
+
+              {/* Ingresar con rostro */}
+              <TouchableOpacity
+                style={[styles.cajaBoton, { marginTop: 10, backgroundColor: '#28a745' }]}
+                activeOpacity={0.8}
+                onPress={() => navigation.navigate('FacialLogin')}
+              >
+                <Text style={styles.TextoBoton}>Ingresar con rostro</Text>
+              </TouchableOpacity>
+
+              {/* Registrar rostro */}
+              <TouchableOpacity
+                style={[styles.cajaBoton, { marginTop: 10, backgroundColor: '#6c757d' }]}
+                activeOpacity={0.8}
+                onPress={() => navigation.navigate('FacialRegister')}
+              >
+                <Text style={styles.TextoBoton}>Registrar rostro</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -90,6 +114,9 @@ export default function App() {
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
               <Text style={styles.text}>Flip Camera</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={closeCamera}>
+              <Text style={styles.text}>Cerrar Cámara</Text>
             </TouchableOpacity>
           </View>
         </>
@@ -144,32 +171,26 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-
   },
   tarjeta: {
     width: '100%',
     maxWidth: 350,
-    backgroundColor: 'white',
+    backgroundColor: '#e3f2fd',
     borderRadius: 20,
     alignItems: 'center',
-    padding: 25,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    alignSelf: 'center',
-    marginTop: 20,
-    marginBottom: 20,
-    borderWidth: 1,
-    borderColor: '#1976d2',
-    borderStyle: 'solid',
-    backgroundColor: '#e3f2fd',
     paddingVertical: 30,
     paddingHorizontal: 20,
     justifyContent: 'center',
     alignItems: 'center',
     gap: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    borderWidth: 1,
+    borderColor: '#1976d2',
+    borderStyle: 'solid',
   },
   cajaTexto: {
     borderWidth: 1,
