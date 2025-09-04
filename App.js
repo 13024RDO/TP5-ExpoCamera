@@ -7,8 +7,8 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import Login from './screens/Login'
 import Home from './screens/Home'
-
-
+import FacialRegister from './screens/FacialRegister'
+import FacialLogin from './screens/FacialLogin' 
 const Stack = createStackNavigator()
 
 export default function App() {
@@ -32,6 +32,16 @@ export default function App() {
           name="Home"
           component={Home}
           options={{ title: 'Inicio' }}
+        />
+        <Stack.Screen
+          name="FacialRegister"
+          component={FacialRegister}
+          options={{ title: 'Registro Facial' }}
+        />
+        <Stack.Screen
+          name="FacialLogin"
+          component={FacialLogin}
+          options={{ title: 'Ingreso Facial' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

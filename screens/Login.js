@@ -77,14 +77,7 @@ export default function Login() {
                 <Text style={styles.TextoBoton}>Iniciar Sesión</Text>
               </TouchableOpacity>
 
-              {/* Abrir cámara */}
-              <TouchableOpacity
-                style={[styles.cajaBoton, { marginTop: 10, backgroundColor: '#1976d2' }]}
-                activeOpacity={0.8}
-                onPress={openCamera}
-              >
-                <Text style={styles.TextoBoton}>Abrir Cámara</Text>
-              </TouchableOpacity>
+             
 
               {/* Ingresar con rostro */}
               <TouchableOpacity

@@ -64,6 +64,6 @@ export default function FacialRegister({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   camera: { flex: 1, width: '100%' },
-  button: { backgroundColor: '#1976d2', padding: 15, borderRadius: 25, marginTop: 20 },
-  buttonText: { color: 'white', fontWeight: 'bold' }
+  button: { backgroundColor: '#1976d2', padding: 15, borderRadius: 25, marginTop: 20,marginBottom: 50, },
+  buttonText: { color: 'white', fontWeight: 'bold', fontSize: 16, textAlign: 'center',paddingHorizontal: 20,},
 });
