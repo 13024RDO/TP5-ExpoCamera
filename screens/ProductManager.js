@@ -52,7 +52,7 @@ export default function ProductManager({ navigation }) {
       <Text style={styles.title}>Gestión de Productos</Text>
 
       <TouchableOpacity style={styles.addButton} onPress={handleAddProduct}>
-        <Text style={styles.addButtonText}>Escanear producto📷</Text>
+        <Text style={styles.addButtonText}>Escanear producto</Text>
       </TouchableOpacity>
 
       <FlatList
