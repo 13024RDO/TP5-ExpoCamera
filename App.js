@@ -6,8 +6,9 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 
 import Login from './screens/Login'
-import Home from './screens/Home'
-
+import ProductManager from './screens/ProductManager'
+import Scanner from './screens/Scanner'  
+import EditProduct from "./screens/EditProduct";
 
 const Stack = createStackNavigator()
 
@@ -29,10 +30,20 @@ export default function App() {
           options={{ title: 'Iniciar sesión' }}
         />
         <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ title: 'Inicio' }}
+          name="ProductManager"
+          component={ProductManager}
+          options={{ title: 'Gestión de Productos' }}
         />
+        <Stack.Screen
+          name="Scanner"
+          component={Scanner}
+          options={{ title: 'Escanear Código' }}
+        />
+        <Stack.Screen
+  name="EditProduct"
+  component={EditProduct}
+  options={{ title: "Editar Producto" }}
+/>
       </Stack.Navigator>
     </NavigationContainer>
   )

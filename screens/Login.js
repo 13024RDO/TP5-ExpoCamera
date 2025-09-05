@@ -29,7 +29,7 @@ export default function App() {
   }
 
   function handleLogin() {
-    navigation.navigate('Home');
+    navigation.navigate('ProductManager');
   }
 
   function openCamera() {
@@ -72,13 +72,7 @@ export default function App() {
                 <Text style={styles.TextoBoton}>Iniciar Sesión</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity
-                style={[styles.cajaBoton, { marginTop: 10, backgroundColor: '#28a745' }]}
-                activeOpacity={0.8}
-                onPress={openCamera}
-              >
-                <Text style={styles.TextoBoton}>Abrir Cámara</Text>
-              </TouchableOpacity>
+            
             </View>
           </View>
         </>
